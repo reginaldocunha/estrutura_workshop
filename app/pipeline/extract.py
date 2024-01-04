@@ -1,6 +1,6 @@
 import os
 import glob
-
+from typing import List
 import pandas as pd
 
 """
@@ -12,8 +12,10 @@ args: input/path (str): caminho da pasta com os arquivos
 return: lista de dataframes
 """
 
-def extract_from_excel(path: str) -> list[pd.DataFrame]:
-    all_files = glob.glob(os.path.join(path, '*.xlsx'))
+directory_path = ("/Users/reginaldocunha/Documents/Luciano_Galvão_Filho/1º_Workshop_"
+                  "-_Como_Estruturar_um_Projeto_de_Dados_do_Zero/estrutura_workshop/app/data/input")
+def extract_from_excel(path: str) -> List[pd.DataFrame]:
+    all_files = glob.glob(os.path.join(directory_path + '/*.xlsx'))
 
     data_frame_list = []
     for file in all_files:
